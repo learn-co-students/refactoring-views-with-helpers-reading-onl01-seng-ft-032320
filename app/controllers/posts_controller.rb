@@ -1,3 +1,4 @@
+require 'pry'
 class PostsController < ApplicationController
 	def index
 		@posts = Post.all
@@ -11,7 +12,7 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 
-	def create
+	def create		
 	  @post = Post.new(params)
 	  @post.save
 	  redirect_to post_path(@post)
@@ -27,3 +28,4 @@ class PostsController < ApplicationController
 	  @post = Post.find(params[:id])
 	end
 end
+
